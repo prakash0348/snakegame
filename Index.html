@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            transition: all 0.5s;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 320px;
+            position: relative;
+        }
+        #container{
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 60px;
+            height: 60px;
+            font-size: 50px;
+        }
+        #left{
+            position: absolute;
+            left: 0px;
+            top: 65px;
+            transform: rotate(160deg);
+        }
+        #right{
+            position: absolute;
+            right: 0px;
+            top: 65px;
+        }
+        #up{
+            position: absolute;
+            top: 0px;
+            rotate: -90deg;
+        }
+        #down{
+            rotate: 90deg;
+            position: absolute;
+            top: 65px;
+        }
+    </style>
+</head>
+<body>
+      <img id="object" src="D:\CR_PROJECT\Super Mario\images\snakemove.gif">
+      <div id="container">
+          <button id="left" onclick="leftSideMovement()"  >></button>
+          <button id="up" onclick="upsideMovement()"  >></button>
+          <button id="right" onclick="rightSideMovement()"  >></button>
+          <button id="down" onclick="downsideMovement()"  >></button>
+      </div>
+      <script>
+          var hor=0;
+          var ver=0;
+          function rightSideMovement()
+          {
+              hor++;
+              document.getElementById("object").style.left=`${hor+10}%`
+              document.getElementById("object").style.rotate="0deg"
+          }
+          function leftSideMovement()
+          {
+              hor --;
+              document.getElementById("object").style.left=`${hor+10}%`
+              document.getElementById("object").style.rotate="180deg"
+
+          }
+          function upsideMovement()
+          {
+              ver++;
+              document.getElementById("object").style.bottom=`${ver+10}%`
+              document.getElementById("object").style.rotate="-90deg"
+
+          }
+          function downsideMovement()
+          {
+              ver--;
+              document.getElementById("object").style.bottom=`${ver+10}%`
+              document.getElementById("object").style.rotate="90deg"
+
+          }
+</script>
+</body>
+</html>
